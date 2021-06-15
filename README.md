@@ -13,5 +13,5 @@ yarn config set registry https://registry.npm.taobao.org
 npm run dev or yarn dev
 
 # 编译
-npm build or yarn build
+npm run build or yarn build
 ```
