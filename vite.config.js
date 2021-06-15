@@ -9,7 +9,10 @@
 import {defineConfig} from 'vite'
 import vue from '@vitejs/plugin-vue'
 import styleImport from 'vite-plugin-style-import'
-import {resolve} from 'path';
+import {resolve} from 'path'
+import {loadEnv} from './src/utils/viteBuild.js'
+
+const {VITE_PORT, VITE_OPEN, VITE_PUBLIC_PATH} = loadEnv();
 
 const alias = {
   '/@': resolve('/src'),
@@ -37,14 +40,14 @@ export default defineConfig({
   ],
   root: process.cwd(),
   resolve: {alias},
-  base: process.env.NODE_ENV === 'production' ? process.env.VITE_PUBLIC_PATH : './',
+  base: process.env.NODE_ENV === 'production' ? VITE_PUBLIC_PATH : './',
   optimizeDeps: {
     include: ['element-plus/lib/locale/lang/zh-cn', 'element-plus/lib/locale/lang/en', 'element-plus/lib/locale/lang/zh-tw'],
   },
   server: {
     host: '0.0.0.0',
-    port: process.env.VITE_PORT,
-    open: process.env.VITE_OPEN,
+    port: VITE_PORT,
+    open: VITE_OPEN,
   },
   build: {
     outDir: 'dist',
