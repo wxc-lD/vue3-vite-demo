@@ -25,12 +25,12 @@
 </template>
 
 <script>
-import {defineComponent, reactive} from 'vue'
+import { defineComponent, reactive } from 'vue'
 
 export default defineComponent({
   name: 'HelloWorld',
-  setup() {
-    const state = reactive({count: 0})
+  setup () {
+    const state = reactive({ count: 0 })
 
     return {
       state

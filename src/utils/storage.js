@@ -9,48 +9,47 @@
 // 1. localStorage
 // 设置永久缓存
 class Storage {
-  setLocal(key, val) {
-    window.localStorage.setItem(key, JSON.stringify(val));
+  setLocal (key, val) {
+    window.localStorage.setItem(key, JSON.stringify(val))
   }
 
   // 获取永久缓存
-  getLocal(key) {
-    let json = window.localStorage.getItem(key);
-    return JSON.parse(json);
+  getLocal (key) {
+    const json = window.localStorage.getItem(key)
+    return JSON.parse(json)
   }
 
   // 移除永久缓存
-  removeLocal(key) {
-    window.localStorage.removeItem(key);
+  removeLocal (key) {
+    window.localStorage.removeItem(key)
   }
 
   // 移除全部永久缓存
-  clearLocal() {
-    window.localStorage.clear();
+  clearLocal () {
+    window.localStorage.clear()
   }
 
   // 2. sessionStorage
   // 设置临时缓存
-  setSession(key, val) {
-    window.sessionStorage.setItem(key, JSON.stringify(val));
+  setSession (key, val) {
+    window.sessionStorage.setItem(key, JSON.stringify(val))
   }
 
   // 获取临时缓存
-  getSession(key) {
-    let json = window.sessionStorage.getItem(key);
-    return JSON.parse(json);
+  getSession (key) {
+    const json = window.sessionStorage.getItem(key)
+    return JSON.parse(json)
   }
 
   // 移除临时缓存
-  removeSession(key) {
-    window.sessionStorage.removeItem(key);
+  removeSession (key) {
+    window.sessionStorage.removeItem(key)
   }
 
   // 移除全部临时缓存
-  clearSession() {
-    window.sessionStorage.clear();
+  clearSession () {
+    window.sessionStorage.clear()
   }
 }
 
-
-export default new Storage
+export default new Storage()
