@@ -1,11 +1,7 @@
-# Read me
+# Vue3-Vite-Demo
 
 ## 开发
-
 ```bash
-# 进入项目目录
-cd delivery
-
 # 安装依赖
 npm install or yarn install
 
