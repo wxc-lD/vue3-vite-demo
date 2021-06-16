@@ -13,17 +13,18 @@ import {
 } from 'element-plus'
 import storage from '@/utils/storage.js'
 import {router} from '@/router/index.js'
+import {loadEnv} from "@/utils/viteBuild"
 
 const {
   clearSession,
   getSession
 } = storage
 
-window.process = {env: {NODE_ENV: 'dev'}}
+const {VUE_APP_URL} = loadEnv()
 
 // 配置新建一个 axios 实例
 const service = axios.create({
-  baseURL: process.env.VUE_APP_URL,
+  baseURL: VUE_APP_URL,
   timeout: 10000,
   headers: {
     'Content-Type': 'application/json'

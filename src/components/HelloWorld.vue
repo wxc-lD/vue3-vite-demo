@@ -25,7 +25,7 @@
 </template>
 
 <script>
-import { defineComponent, reactive } from 'vue'
+import {defineComponent, reactive} from 'vue'
 
 export default defineComponent({
   name: 'HelloWorld',
@@ -35,8 +35,10 @@ export default defineComponent({
       default: null
     }
   },
-  setup () {
-    const state = reactive({ count: 0 })
+  setup() {
+    const state = reactive({
+      count: 0,
+    })
 
     return {
       state
@@ -49,5 +51,4 @@ export default defineComponent({
 a {
   color: #42b983;
 }
-
 </style>
