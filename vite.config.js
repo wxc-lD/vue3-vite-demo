@@ -48,6 +48,14 @@ export default defineConfig({
     host: '0.0.0.0',
     port: VITE_PORT,
     open: VITE_OPEN,
+    proxy: {
+      '/api/v1': {
+        target: 'http://leslie.free.vipnps.vip/api/v1',
+        ws: false,
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api\/v1/, ''),
+      },
+    },
   },
   build: {
     outDir: 'dist',

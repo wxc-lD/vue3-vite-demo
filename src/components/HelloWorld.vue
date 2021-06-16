@@ -26,7 +26,6 @@
 
 <script>
 import {defineComponent, reactive} from 'vue'
-import {regist} from "@/api/user"
 
 export default defineComponent({
   name: 'HelloWorld',
