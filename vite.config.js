@@ -10,7 +10,7 @@ import {defineConfig} from 'vite'
 import vue from '@vitejs/plugin-vue'
 import styleImport from 'vite-plugin-style-import'
 import {resolve} from 'path'
-import {loadEnv} from './src/utils/viteBuild.js'
+import {loadEnv} from '@/utils/viteBuild'
 
 const {VITE_PORT, VITE_OPEN, VITE_PUBLIC_PATH} = loadEnv()
 
