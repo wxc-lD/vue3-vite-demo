@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2021 fuzzy
- * 项目名称：delivery
+ * 项目名称：vue3-vite-demo
  * 文件名称：vite.config.js
  * 创建日期：2021年06月16日
  * 创建作者：fuzzy
@@ -12,12 +12,12 @@ import styleImport from 'vite-plugin-style-import'
 import {resolve} from 'path'
 import {loadEnv} from './src/utils/viteBuild.js'
 
-const {VITE_PORT, VITE_OPEN, VITE_PUBLIC_PATH} = loadEnv();
+const {VITE_PORT, VITE_OPEN, VITE_PUBLIC_PATH} = loadEnv()
 
 const alias = {
   '/@': resolve('/src'),
   '@': resolve('/src'),
-};
+}
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -30,10 +30,10 @@ export default defineConfig({
         ensureStyleFile: true,
         resolveStyle: (name) => {
           name = name.slice(3)
-          return `element-plus/packages/theme-chalk/src/${name}.scss`;
+          return `element-plus/packages/theme-chalk/src/${name}.scss`
         },
         resolveComponent: (name) => {
-          return `element-plus/lib/${name}`;
+          return `element-plus/lib/${name}`
         },
       }]
     })

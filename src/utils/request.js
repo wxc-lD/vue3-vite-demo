@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2021 fuzzy
- * 项目名称：delivery
+ * 项目名称：vue3-vite-demo
  * 文件名称：request.js
  * 创建日期：2021年06月16日
  * 创建作者：fuzzy
@@ -12,14 +12,14 @@ import {
   ElMessageBox
 } from 'element-plus'
 import storage from '@/utils/storage.js'
-import { router } from '@/router/index.js'
+import {router} from '@/router/index.js'
 
 const {
   clearSession,
   getSession
 } = storage
 
-window.process = { env: { NODE_ENV: 'dev' } }
+window.process = {env: {NODE_ENV: 'dev'}}
 
 // 配置新建一个 axios 实例
 const service = axios.create({

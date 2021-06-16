@@ -1,3 +1,11 @@
+/*
+ * Copyright (c) 2021 fuzzy
+ * 项目名称：vue3-vite-demo
+ * 文件名称：viteBuild.js
+ * 创建日期：2021年06月16日
+ * 创建作者：fuzzy
+ */
+
 // vite 打包相关
 import dotenv from 'dotenv'
 

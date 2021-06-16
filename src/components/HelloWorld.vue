@@ -1,6 +1,6 @@
 <!--
   - Copyright (c) 2021 fuzzy
-  - 项目名称：delivery
+  - 项目名称：vue3-vite-demo
   - 文件名称：HelloWorld.vue
   - 创建日期：2021年06月16日
   - 创建作者：fuzzy
