@@ -9,13 +9,7 @@
   },
   "dependencies": {
     "axios": "^0.21.1",
-    "dotenv": "^10.0.0",
     "element-plus": "^1.0.2-beta.48",
-    "eslint-config-prettier": "^8.3.0",
-    "prettier": "^2.3.1",
-    "qs": "^6.10.1",
-    "sass": "^1.35.0",
-    "sass-loader": "^12.1.0",
     "vue": "^3.0.5",
     "vue-router": "^4.0.8",
     "vuex": "^4.0.1"
@@ -30,6 +24,11 @@
     "eslint-plugin-promise": "^5.1.0",
     "eslint-plugin-vue": "^7.11.1",
     "vite": "^2.3.7",
-    "vite-plugin-style-import": "^0.10.1"
+    "vite-plugin-style-import": "^0.10.1",
+    "sass": "^1.35.0",
+    "sass-loader": "^12.1.0",
+    "eslint-config-prettier": "^8.3.0",
+    "prettier": "^2.3.1",
+    "dotenv": "^10.0.0"
   }
 }

@@ -22,7 +22,7 @@ export const routes = [
     path: '/',
     component: () => import('@/components/HelloWorld.vue'),
     meta: {
-      isLogin: true
+      isLogin: false
     }
   }
 ]
