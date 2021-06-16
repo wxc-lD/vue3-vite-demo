@@ -6,13 +6,14 @@
  * 创建作者：fuzzy
  */
 
-import { createApp } from 'vue'
+import {createApp} from 'vue'
 import App from './App.vue'
-import { router } from './router'
+import {router} from './router'
 import 'element-plus/packages/theme-chalk/src/base.scss'
-import { ElButton } from 'element-plus'
+import {ElButton} from 'element-plus'
+import {store} from "@/store"
 
 const app = createApp(App)
 app.use(ElButton)
 
-app.use(router).mount('#app')
+app.use(store).use(router).mount('#app')
