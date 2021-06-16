@@ -6,9 +6,9 @@
  * 创建作者：fuzzy
  */
 
-// 1. localStorage
-// 设置永久缓存
 class Storage {
+  // 1. localStorage
+  // 设置永久缓存
   setLocal(key, val) {
     window.localStorage.setItem(key, JSON.stringify(val))
   }
