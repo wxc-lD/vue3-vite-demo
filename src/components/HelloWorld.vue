@@ -29,6 +29,12 @@ import { defineComponent, reactive } from 'vue'
 
 export default defineComponent({
   name: 'HelloWorld',
+  props: {
+    msg: {
+      type: String,
+      default: null
+    }
+  },
   setup () {
     const state = reactive({ count: 0 })
 
