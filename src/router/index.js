@@ -6,13 +6,7 @@
  * 创建作者：fuzzy
  */
 
-import {createRouter, createWebHashHistory} from 'vue-router'
-import storage from '@/utils/storage.js'
-import {store} from "@/store"
-
-const {
-  getSession
-} = storage
+import { createRouter, createWebHashHistory } from 'vue-router'
 
 // 2. 定义一些路由
 // 每个路由都需要映射到一个组件。
@@ -20,55 +14,21 @@ const {
 export const routes = [
   {
     path: '/',
-    redirect: '/dashboard'
+    name: 'index',
+    component: () => import('@/views/index/index.vue')
+  }, {
+    path: '/login',
+    name: 'loginRegister',
+    component: () => import('@/views/loginRegister/loginRegister.vue')
+  }, {
+    path: '/:catchAll(.*)',
+    name: '404',
+    component: () => import('@/views/404/404.vue')
   },
-  {
-    path: '/',
-    name: "home",
-    component: () => import('@/views/home/index.vue'),
-    meta: {
-      title: '系统首页',
-      isLogin: false
-    },
-    children: [
-      {
-        path: "/dashboard",
-        name: "dashboard",
-        meta: {
-          title: '系统首页'
-        },
-        component: () => import('@/components/HelloWorld.vue')
-      },
-      {
-        path: '/:pathMatch(.*)',
-        name: '404',
-        meta: {
-          title: '找不到页面'
-        },
-        component: () => import('@/views/error/404.vue')
-      }
-    ]
-  }
 ]
 
 export const router = createRouter({
   // 4. 内部提供了 history 模式的实现。为了简单起见，我们在这里使用 hash 模式。
   history: createWebHashHistory(),
   routes // `routes: routes` 的缩写
-})
-
-// 登录状态保持和限制
-router.beforeEach((to, from, next) => {
-  const isLogin = getSession("token")
-  if (isLogin && store.state.Login.isLogin) {
-    next()
-  } else {
-    if (to.meta.isLogin) {
-      next({
-        path: '/login'
-      })
-    } else {
-      next()
-    }
-  }
 })

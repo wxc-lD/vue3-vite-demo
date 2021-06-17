@@ -6,27 +6,30 @@
  * 创建作者：fuzzy
  */
 
-import {createApp} from 'vue'
+import { createApp } from 'vue'
 import App from './App.vue'
-import {createI18n} from 'vue-i18n'
-import {router} from './router'
+import { router } from './router'
 import 'element-plus/packages/theme-chalk/src/base.scss'
-import "@/assets/css/color-dark.css"
-import installElementPlus from '@/plugins/element'
-import localeZH from 'element-plus/lib/locale/lang/zh-cn'
-import localeEN from 'element-plus/lib/locale/lang/en'
-import messages from '@/utils/i18n'
-import {store} from "@/store"
+// import { ElButton, ElForm } from 'element-plus'
 
+// const app = createApp(App)
+// app.use(ElButton)
+// app.use(ElForm)
+
+// app.use(router).mount('#app')
+
+import { ElForm, ElFormItem, ElInput, ElButton, ElSelect, ElOption } from 'element-plus';
 const app = createApp(App)
-const i18n = createI18n({
-  locale: localeZH.name,
-  fallbackLocale: localeEN.name,
-  messages,
-})
-installElementPlus(app)
-app
-  .use(store)
-  .use(router)
-  .use(i18n)
-  .mount('#app')
+
+// app.component(ElForm.name, ElForm);
+// app.component(ElFormItem.name, ElFormItem);
+
+// app.config.globalProperties.$ELEMENT = option
+app.use(ElForm)
+app.use(ElFormItem)
+app.use(ElInput)
+app.use(ElButton)
+app.use(ElSelect)
+app.use(ElOption)
+app.use(router).mount('#app')
+
