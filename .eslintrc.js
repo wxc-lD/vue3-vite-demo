@@ -26,5 +26,7 @@ module.exports = {
   ],
   rules: {
     semi: 2,
+    "prefer-const": "off",
+    "new-cap": "off"
   }
 }

@@ -20,10 +20,34 @@ const {
 export const routes = [
   {
     path: '/',
-    component: () => import('@/components/HelloWorld.vue'),
+    redirect: '/dashboard'
+  },
+  {
+    path: '/',
+    name: "home",
+    component: () => import('@/views/home/index.vue'),
     meta: {
+      title: '系统首页',
       isLogin: false
-    }
+    },
+    children: [
+      {
+        path: "/dashboard",
+        name: "dashboard",
+        meta: {
+          title: '系统首页'
+        },
+        component: () => import('@/components/HelloWorld.vue')
+      },
+      {
+        path: '/:pathMatch(.*)',
+        name: '404',
+        meta: {
+          title: '找不到页面'
+        },
+        component: () => import('@/views/error/404.vue')
+      }
+    ]
   }
 ]
 
@@ -36,7 +60,7 @@ export const router = createRouter({
 // 登录状态保持和限制
 router.beforeEach((to, from, next) => {
   const isLogin = getSession("token")
-  if (isLogin && store.state.isLogin) {
+  if (isLogin && store.state.Login.isLogin) {
     next()
   } else {
     if (to.meta.isLogin) {

@@ -8,12 +8,25 @@
 
 import {createApp} from 'vue'
 import App from './App.vue'
+import {createI18n} from 'vue-i18n'
 import {router} from './router'
 import 'element-plus/packages/theme-chalk/src/base.scss'
-import {ElButton} from 'element-plus'
+import "@/assets/css/color-dark.css"
+import installElementPlus from '@/plugins/element'
+import localeZH from 'element-plus/lib/locale/lang/zh-cn'
+import localeEN from 'element-plus/lib/locale/lang/en'
+import messages from '@/utils/i18n'
 import {store} from "@/store"
 
 const app = createApp(App)
-app.use(ElButton)
-
-app.use(store).use(router).mount('#app')
+const i18n = createI18n({
+  locale: localeZH.name,
+  fallbackLocale: localeEN.name,
+  messages,
+})
+installElementPlus(app)
+app
+  .use(store)
+  .use(router)
+  .use(i18n)
+  .mount('#app')

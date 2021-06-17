@@ -6,22 +6,12 @@
  * 创建作者：fuzzy
  */
 import {createStore} from "vuex"
+import login from "@/store/modules/login"
+import layout from "@/store/modules/layout"
 
 export const store = createStore({
-  state: {
-    isLogin: false
-  },
-  getters: {
-    isLogin: state => state.isLogin
-  },
-  mutations: {
-    setLogin(state, payload) {
-      state.isLogin = payload
-    }
-  },
-  actions: {
-    setLoginStatus({commit}, flag) {
-      commit("setLogin", flag)
-    }
+  modules: {
+    Login: login,
+    Layout: layout
   }
 })
